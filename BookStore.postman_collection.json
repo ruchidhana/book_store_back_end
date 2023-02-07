@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "4e3367bb-456c-4dbc-a41c-8382d4882830",
+		"name": "BookStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4299217"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\":\"Ruchira\",\n    \"last_name\" : \"Dhana\",\n    \"email\" : \"webruchira@gmail.com\",\n    \"password\" : \"12345678\",\n    \"no_of_published_books\":10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "by using this post api we can make orders "
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "switch_active_status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/switch_active_status",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"switch_active_status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_books",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "search_books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/search_books?search_key=Potter&search_type=book_title",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"search_books"
+					],
+					"query": [
+						{
+							"key": "search_key",
+							"value": "Potter"
+						},
+						{
+							"key": "search_type",
+							"value": "book_title"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view_uploaded_books",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "add_book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiMjhjZmQ0YjAyYzNlYzBhM2E4ZTU1MDJiNDMzNzBlYjEwZWFhYTM5OTM1YzhkYjQ0ZjQ5NWRlNThhYmExMzcyYjhlODIxODM3MDA0MjZmMWMiLCJpYXQiOjE2NzU1MjczODksIm5iZiI6MTY3NTUyNzM4OSwiZXhwIjoxNzA3MDYzMzg5LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.kegSQ9yQHZwbCMEHKUCYB7tXXYzuiivjc99Eqn8Ao33RLJSMOBtqjp15DONqP_ieC2aNsb3cjG6H3K29V9XRxJT2yZeBjvYFX27BVqutHr30kqTzw1kfqijnvvumWZsYVs-IgFldM_u_4vssAn7dJEqXMZYn_Gnm3r8Wiada1kmCz4l9Zb8XMZlM6J2QScqr_z3GV576TRkBEgwjmCbKrrUDkI43OIAIyf2c2VxFA6afvwEjGvitcabNbFQCFW76kVUoB-bykRUC72kv-FgixaoMSsrhLqpkZwf3wY1n8ggy3n8oQIqtUQTxMFW0U9vzE7QROoQ2o91HLwRHE4wO4n1ztrZBsaUdWSzHEfo5vpL82pbWLRZusZF32XdbiRSqGgd9z-BkuvrRyirXGpn6YikMFjcEYO12MF7iMVKA8cWLRmhUdgVfv9yGOE0bx6JaYO4Wo7OjnyS9mccIoFMB7lw7iy-86jaoGxVT3B8BfMIKgEBMXtxpfgK33vi6KRXKW1FBKc043PBEpL6k4k-4nldB-fnTGDBQkHqCi8D6btEk969soPcb0KNdbmNLo8BSdAcHPkHJImsF00vATuZsZ0IyygG_F3mvjRqCgMLLhBQ3ukXHr1I5TtvAAE57rXytJCmjv9WLS7k4E_cOP0CHFyG4Oola4uc4o8fTl7RXppU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isbn\":\"123-456-589\",\r\n    \"title\":\"ran kevita\",\r\n    \"description\": \"This is a good book\",\r\n    \"price\": 1000.50,\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/add_book",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"add_book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProfile",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_users",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
