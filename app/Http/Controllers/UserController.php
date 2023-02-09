@@ -41,7 +41,7 @@ class UserController extends Controller
         try
         {
             $user = User::create([
-                'no_of_published_books' => $request->no_of_published_books,
+                'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
                 'password' => Hash::make($request->password),
                 'email' => $request->email,
@@ -52,7 +52,7 @@ class UserController extends Controller
             if($user)
             {
                 Author::create([
-                    'first_name' => $request->first_name,
+                    'no_of_all_published_books'=> $request->no_of_published_books,
                     'user_id' => $user->id,
                 ]);
             }
@@ -102,7 +102,7 @@ class UserController extends Controller
         if ($userCredentials->fails()) {
             return response()->json([
                 'error' => true,
-                "message" => $userCredentials->errors(),
+                "message" => $userCredentials->errors()->first(),
             ]);
         }
 

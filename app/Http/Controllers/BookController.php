@@ -35,6 +35,7 @@ class BookController extends Controller
             ->select('users.first_name')
             ->where('book_authors.book_id',$book->id)
             ->get();
+
             $book_authors->transform(function ($comp) {
                 return [
                     $comp->first_name,
@@ -46,7 +47,7 @@ class BookController extends Controller
         });
 
         return [
-            'book_name' => $books,
+            'book_name' => $books
         ];
 
 
@@ -66,12 +67,11 @@ class BookController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'error' => true,
-                "message" => $validator->errors(),
-            ], 400);
+                "message" => $validator->errors()->first(),
+            ]);
         }
 
         $user = User::where("email", $request->email)->first();
-        dd($user->id);
         $author = Author::where("user_id", $user->id)->first();
         $complete_file_name = $request->file('image')->getClientOriginalName();
         $file_name_only = pathinfo($complete_file_name,PATHINFO_FILENAME);
